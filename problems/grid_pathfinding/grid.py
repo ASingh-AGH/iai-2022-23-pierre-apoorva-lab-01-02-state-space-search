@@ -3,7 +3,7 @@ from enum import Enum
 
 from base import State
 from typing import Tuple, Union, cast
-from numpy.typing import NDArray
+from numpy.typing import ArrayLike
 from dataclasses import dataclass
 
 
@@ -33,7 +33,7 @@ class GridCoord(State):
 
 @dataclass(frozen=True)
 class Grid:
-    board: NDArray
+    board: ArrayLike
 
     def get_cell(self, c: GridCoord) -> GridCell:
         return cast(GridCell, self.board[c.y, c.x])
