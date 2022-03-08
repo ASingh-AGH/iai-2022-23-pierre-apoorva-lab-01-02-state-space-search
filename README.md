@@ -69,6 +69,7 @@ Finally you can run a solver:
 
 You can also run a benchmark:
 - `python benchmark.py -p <problem> -t timeout <path_to_instance>`, e.g.
+- `python solve.py -p n_puzzle -a dfsrecursive problems/n_puzzle/instances/03_03.txt` or, when you implement some things...
 - `python benchmark.py -p rush_hour problems/rush_hour/instances/54.txt`
 
 If you run script with incorrect arguments, you will get some helpful info ;)
