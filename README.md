@@ -2,15 +2,22 @@
 
 ## TODO: 
 
-Fill missing code according to the `TODO:` comments in the following files:
+Fill missing code according to the `TODO:` comments in the following files.
+
+**Lab 1:** 
+
 - `solvers/generic/uninformed.py`
 - `solvers/generic/best_first.py`
-- `solvers/generic/bidirectional_search.py`
 - `problems/grid_pathfinding/heuristics/euclidean_heuristic.py`
 - `problems/grid_pathfinding/heuristics/manhattan_heuristic.py`
 - `problems/grid_pathfinding/heuristics/diagonal_heuristic.py`
 - `problems/n_puzzle/heuristics/n_puzzle_tiles_out_of_place_heuristic.py`
 - `problems/n_puzzle/heuristics/n_puzzle_manhattan_heuristic.py`
+
+
+**Lab 2:** 
+
+- `solvers/generic/bidirectional_search.py`
 - `problems/blocks_world/blocks_world_heuristic.py`
 - `problems/blocks_world/blocks_world_problem.py`
 - `problems/blocks_world/blocks_world_action.py`
