@@ -1,7 +1,7 @@
 Dear Student,
 
 I regret to inform you that you've received only **0** out of 46 points for this assignment.\
-There still exist some issues that should be addressed before the deadline: 2022-12-06 22:00:00 UTC (+0000). For further details, please refer to the following list:
+There still exist some issues that should be addressed before the deadline: 2022-12-06 21:00:00 UTC (+0000). For further details, please refer to the following list:
 
 <details><summary>Best first search returns root if root is solution &gt;&gt; NotImplementedError</summary></details>
 <details><summary>Best first search returns none when no solution found &gt;&gt; NotImplementedError</summary></details>
@@ -47,8 +47,8 @@ There still exist some issues that should be addressed before the deadline: 2022
 <details><summary>Npuzzle heuristic &gt;&gt; NotImplementedError</summary></details>
 <details><summary>Npuzzle heuristic &gt;&gt; NotImplementedError</summary></details>
 <details><summary>Npuzzle heuristic &gt;&gt; NotImplementedError</summary></details>
-<details><summary>Uninformed search finds correct path &gt;&gt; NotImplementedError</summary></details>
-<details><summary>Uninformed search finds correct path &gt;&gt; NotImplementedError</summary></details>
+<details><summary>Uninformed search finds correct path &gt;&gt; &#x27;TypeVar&#x27; object has no attribute &#x27;is_goal&#x27;</summary></details>
+<details><summary>Uninformed search finds correct path &gt;&gt; &#x27;TypeVar&#x27; object has no attribute &#x27;is_goal&#x27;</summary></details>
 
 -----------
 I remain your faithful servant\
