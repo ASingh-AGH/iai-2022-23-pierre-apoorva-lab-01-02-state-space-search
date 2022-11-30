@@ -14,4 +14,7 @@ class GridDiagonalHeuristic(Heuristic[GridCoord]):
         # - 'state' is the current state 
         # - 'self.problem.goal' is the goal state
         # - 'self.problem.diagonal_weight' is cost of making a diagonal move
+        dx=abs(state.x-self.problem.goal.x)
+        dy=abs(state.y - self.problem.goal.y)
+        return self.problem.diagonal_weight*math.sqrt(dx*dx+dy*dy)
         raise NotImplementedError
