@@ -37,13 +37,13 @@ class UninformedSearch:
                 return self.root
             else:
                 self.frontier.push(self.root)
-                node = self.frontier.pop()
-                if node not in self.visited:
-                    self.visited.add(node)
+                self.root = self.frontier.pop()
+                if self.root not in self.visited:
+                    self.visited.add(self.root)
 
-                    if self.problem.is_goal(node):
-                        return node
-                    for neighbour in self.frontier[node]:
+                    if self.problem.is_goal(self.root):
+                        return self.root
+                    for neighbour in self.frontier[self.root]:
                         if neighbour not in self.visited:
                             self.frontier.append(neighbour)
 
