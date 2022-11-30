@@ -32,13 +32,13 @@ There still exist some issues that should be addressed before the deadline: 2022
 <details><summary>Blocks world state apply &gt;&gt; NotImplementedError</summary></details>
 <details><summary>Blocks world state apply &gt;&gt; NotImplementedError</summary></details>
 <details><summary>Blocks world actions &gt;&gt; NotImplementedError</summary></details>
+<details><summary>Grid heuristic &gt;&gt; name &#x27;math&#x27; is not defined</summary></details>
 <details><summary>Grid heuristic &gt;&gt; NotImplementedError</summary></details>
 <details><summary>Grid heuristic &gt;&gt; NotImplementedError</summary></details>
+<details><summary>Grid heuristic &gt;&gt; name &#x27;math&#x27; is not defined</summary></details>
 <details><summary>Grid heuristic &gt;&gt; NotImplementedError</summary></details>
 <details><summary>Grid heuristic &gt;&gt; NotImplementedError</summary></details>
-<details><summary>Grid heuristic &gt;&gt; NotImplementedError</summary></details>
-<details><summary>Grid heuristic &gt;&gt; NotImplementedError</summary></details>
-<details><summary>Grid heuristic &gt;&gt; NotImplementedError</summary></details>
+<details><summary>Grid heuristic &gt;&gt; name &#x27;math&#x27; is not defined</summary></details>
 <details><summary>Grid heuristic &gt;&gt; NotImplementedError</summary></details>
 <details><summary>Grid heuristic &gt;&gt; NotImplementedError</summary></details>
 <details><summary>Npuzzle heuristic &gt;&gt; NotImplementedError</summary></details>
