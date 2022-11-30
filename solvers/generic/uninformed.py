@@ -33,7 +33,7 @@ class UninformedSearch:
         # - return None if nothing happens
         
         while self.frontier:
-            if P.is_goal(self.root):
+            if self.problem.is_goal(self.root):
                 return self.root
             else:
                 self.frontier.push(self.root)
@@ -41,7 +41,7 @@ class UninformedSearch:
                 if node not in self.visited:
                     self.visited.add(node)
 
-                    if P.is_goal(node):
+                    if self.problem.is_goal(node):
                         return node
                     for neighbour in self.frontier[node]:
                         if neighbour not in self.visited:
