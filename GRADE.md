@@ -47,8 +47,8 @@ There still exist some issues that should be addressed before the deadline: 2022
 <details><summary>Npuzzle heuristic &gt;&gt; NotImplementedError</summary></details>
 <details><summary>Npuzzle heuristic &gt;&gt; NotImplementedError</summary></details>
 <details><summary>Npuzzle heuristic &gt;&gt; NotImplementedError</summary></details>
-<details><summary>Uninformed search finds correct path &gt;&gt; &#x27;TypeVar&#x27; object has no attribute &#x27;is_goal&#x27;</summary></details>
-<details><summary>Uninformed search finds correct path &gt;&gt; &#x27;TypeVar&#x27; object has no attribute &#x27;is_goal&#x27;</summary></details>
+<details><summary>Uninformed search finds correct path &gt;&gt; &#x27;Node&#x27; object has no attribute &#x27;node_name&#x27;</summary></details>
+<details><summary>Uninformed search finds correct path &gt;&gt; &#x27;Node&#x27; object has no attribute &#x27;node_name&#x27;</summary></details>
 
 -----------
 I remain your faithful servant\
