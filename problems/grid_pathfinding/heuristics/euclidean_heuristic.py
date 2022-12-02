@@ -15,6 +15,6 @@ class GridEuclideanHeuristic(Heuristic[GridCoord]):
         # - 'state' is the current state 
         # - 'self.problem.goal' is the goal state
         
-        return sqrt((state.x -self.problem.goal.x) ** 2 + (state.y - self.problem.y) ** 2)
+        return sqrt((state.x -self.problem.goal.x) ** 2 + (state.y - self.problem.goal.y) ** 2)
         raise NotImplementedError
   
