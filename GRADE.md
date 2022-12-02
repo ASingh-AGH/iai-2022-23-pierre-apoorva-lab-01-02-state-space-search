@@ -1,6 +1,6 @@
 Dear Student,
 
-I regret to inform you that you've received only **3** out of 46 points for this assignment.\
+I regret to inform you that you've received only **9** out of 46 points for this assignment.\
 There still exist some issues that should be addressed before the deadline: 2022-12-06 21:00:00 UTC (+0000). For further details, please refer to the following list:
 
 <details><summary>Best first search returns root if root is solution &gt;&gt; NotImplementedError</summary></details>
@@ -32,12 +32,6 @@ There still exist some issues that should be addressed before the deadline: 2022
 <details><summary>Blocks world state apply &gt;&gt; NotImplementedError</summary></details>
 <details><summary>Blocks world state apply &gt;&gt; NotImplementedError</summary></details>
 <details><summary>Blocks world actions &gt;&gt; NotImplementedError</summary></details>
-<details><summary>Grid heuristic &gt;&gt; NotImplementedError</summary></details>
-<details><summary>Grid heuristic &gt;&gt; &#x27;GridPathfinding&#x27; object has no attribute &#x27;y&#x27;</summary></details>
-<details><summary>Grid heuristic &gt;&gt; NotImplementedError</summary></details>
-<details><summary>Grid heuristic &gt;&gt; &#x27;GridPathfinding&#x27; object has no attribute &#x27;y&#x27;</summary></details>
-<details><summary>Grid heuristic &gt;&gt; NotImplementedError</summary></details>
-<details><summary>Grid heuristic &gt;&gt; &#x27;GridPathfinding&#x27; object has no attribute &#x27;y&#x27;</summary></details>
 <details><summary>Npuzzle heuristic &gt;&gt; NotImplementedError</summary></details>
 <details><summary>Npuzzle heuristic &gt;&gt; NotImplementedError</summary></details>
 <details><summary>Npuzzle heuristic &gt;&gt; NotImplementedError</summary></details>
