@@ -14,8 +14,7 @@ class GridEuclideanHeuristic(Heuristic[GridCoord]):
         # Calculate an euclidean distance:
         # - 'state' is the current state 
         # - 'self.problem.goal' is the goal state
-        dx=abs(state.x-self.problem.goal.x)
-        dy=abs(state.y - self.problem.goal.y)
-        return self.problem.diagonal_weight*sqrt(dx*dx+dy*dy)
+        
+        return sqrt((state.x -self.problem.goal.x) ** 2 + (state.y - self.problem.y) ** 2)
         raise NotImplementedError
   

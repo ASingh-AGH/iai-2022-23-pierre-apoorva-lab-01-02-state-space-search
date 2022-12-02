@@ -12,5 +12,7 @@ class GridManhattanHeuristic(Heuristic[GridCoord]):
         # TODO:
         # Calculate a manhattan distance:
         # - 'state' is the current state 
+
+        return abs(state.x - self.problem.goal.x) + abs(state.y - self.problem.goal.y)
         raise NotImplementedError
 
