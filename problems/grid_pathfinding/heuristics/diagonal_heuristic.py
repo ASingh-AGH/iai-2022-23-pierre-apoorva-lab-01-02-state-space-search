@@ -9,7 +9,6 @@ class GridDiagonalHeuristic(Heuristic[GridCoord]):
         self.problem = problem
 
     def __call__(self, state: GridCoord) -> float:
-        # TODO:
         # Calculate a diagonal distance:
         # - 'state' is the current state 
         # - 'self.problem.goal' is the goal state

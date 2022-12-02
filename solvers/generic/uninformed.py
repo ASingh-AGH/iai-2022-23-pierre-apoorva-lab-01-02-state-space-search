@@ -32,19 +32,18 @@ class UninformedSearch:
         #         * push child onto frontier
         # - return None if nothing happens
         
+        if self.problem.is_goal(self.root):
+            return self.root
+        self.frontier.push(self.root)
         while self.frontier:
+            self.root = self.frontier.pop()
             if self.problem.is_goal(self.root):
                 return self.root
             else:
-                self.frontier.push(self.root)
-                self.root = self.frontier.pop()
-                if self.root not in self.visited:
-                    self.visited.add(self.root)
-
-                    if self.problem.is_goal(self.root):
-                        return self.root
-                    for neighbour in self.frontier[self.root]:
-                        if neighbour not in self.visited:
-                            self.frontier.append(neighbour)
-
+                child=self.tree.expand(self.problem, self.root, None, None)
+                if child not in self.visited:
+                    self.visited.add(child)
+                    self.frontier.push(child)
+        return None
+        
         raise NotImplementedError

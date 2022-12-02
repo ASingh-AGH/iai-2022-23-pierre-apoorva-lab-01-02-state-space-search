@@ -9,7 +9,6 @@ class GridManhattanHeuristic(Heuristic[GridCoord]):
         self.problem = problem
 
     def __call__(self, state: GridCoord) -> float:
-        # TODO:
         # Calculate a manhattan distance:
         # - 'state' is the current state 
 
