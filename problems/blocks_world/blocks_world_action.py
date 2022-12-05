@@ -12,6 +12,7 @@ class BlocksWorldAction:
         # - create a new state by applying the action
         #   (move block from 'self.column_from' to 'self.column_to')
         # tip. remember to not modify the current state!
+        self.column_to, self.column_from = self.column_from, None
         raise NotImplementedError
     
     def __str__(self) -> str:

@@ -16,6 +16,17 @@ class BlocksWorldNaiveHeuristic(Heuristic):
         # TODO:
         # return a dict of form:
         # { <block name> : <index of column in the goal state> }
+        columns = {
+            "1" : "0",
+            "2" : "1",
+            "3" : "2",
+            "4" : "3",
+            "5" : "4",
+            "6" : "5",
+            "7" : "6",
+            "8" : "7"
+        }
+        return columns
         raise NotImplementedError
 
     def _calculate_expected_fundaments(self, goal: BlocksWorldState) -> Dict[str, List[str]]:
