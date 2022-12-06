@@ -40,7 +40,7 @@ class UninformedSearch:
             if self.problem.is_goal(nodes):
                 return nodes
             else:
-                nodes = self.tree.expand(self.problem, nodes, None, None)
+                nodes = self.tree.expand(self.problem, nodes, None, None) #this line is problem
                 if nodes not in self.visited:
                     self.visited.add(nodes)
                     self.frontier.push(nodes)
