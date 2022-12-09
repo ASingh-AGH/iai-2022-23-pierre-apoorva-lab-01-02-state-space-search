@@ -33,19 +33,19 @@ class UninformedSearch:
         # - return None if nothing happens
         
         if self.problem.is_goal(self.root.state):
-            return self.root.state
-        self.frontier.push(self.root.state)
+            return self.root
+        self.frontier.push(self.root)
         while self.frontier:
             node = self.frontier.pop()
             if self.problem.is_goal(node.state):
                 return node
-            else:
-                children = self.tree.expand(self.problem, node) #this line is problem
-                for child in children:
-                    if child.state in visited:
-                        continue
-                    self.visited.add(child.state)
-                    self.frontier.push(child)
+            
+            children = self.tree.expand(self.problem, node) #this line is problem
+            for child in children:
+                if child.state in self.visited:
+                    continue
+                self.visited.add(child.state)
+                self.frontier.push(child)
         return None
         
         raise NotImplementedError
