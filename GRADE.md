@@ -1,6 +1,6 @@
 Dear Student,
 
-I regret to inform you that you've received only **9** out of 46 points for this assignment.\
+I regret to inform you that you've received only **11** out of 46 points for this assignment.\
 There still exist some issues that should be addressed before the deadline: 2022-12-19 08:00:00 CET (+0100). For further details, please refer to the following list:
 
 <details><summary>Best first search returns root if root is solution &gt;&gt; NotImplementedError</summary></details>
@@ -38,8 +38,6 @@ There still exist some issues that should be addressed before the deadline: 2022
 <details><summary>Npuzzle heuristic &gt;&gt; NotImplementedError</summary></details>
 <details><summary>Npuzzle heuristic &gt;&gt; NotImplementedError</summary></details>
 <details><summary>Npuzzle heuristic &gt;&gt; NotImplementedError</summary></details>
-<details><summary>Uninformed search finds correct path &gt;&gt; &#x27;GraphProblemState&#x27; object has no attribute &#x27;state&#x27;</summary></details>
-<details><summary>Uninformed search finds correct path &gt;&gt; &#x27;GraphProblemState&#x27; object has no attribute &#x27;state&#x27;</summary></details>
 
 -----------
 I remain your faithful servant\
