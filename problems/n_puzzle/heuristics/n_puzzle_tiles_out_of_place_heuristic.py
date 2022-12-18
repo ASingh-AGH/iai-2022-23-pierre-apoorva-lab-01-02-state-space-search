@@ -6,7 +6,6 @@ from problems.n_puzzle.heuristics.n_puzzle_abstract_heuristic import NPuzzleAbst
 class NPuzzleTilesOutOfPlaceHeuristic(NPuzzleAbstractHeuristic):
 
     def __call__(self, state: NPuzzleState) -> float:
-        # TODO:
         # Calculate how many tiles are not on their expected positions
         # tip 1.'state' is the current state, 
         # tip 2. you can use self.positions function to get from it a dictionary:

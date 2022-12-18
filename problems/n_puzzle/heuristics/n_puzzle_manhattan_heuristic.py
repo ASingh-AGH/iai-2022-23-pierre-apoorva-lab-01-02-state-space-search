@@ -13,4 +13,14 @@ class NPuzzleManhattanHeuristic(NPuzzleAbstractHeuristic):
         # tip 2. you can use self.positions function to get from it a dictionary:
         #   { tile_number : (x_coordinate, y_coordinate) }
         # tip 3. self.goal_coords contains such a dictionary for the goal state
+
+        # return abs(state.x - self.problem.goal.x) + abs(state.y - self.problem.goal.y)
+
+        curr = self.positions(state)
+        ans = 0
+        for i in curr:
+            ans += abs(curr[0] - self.goal_coords[0]) + abs (curr[1] - self.goal_coords[1])
+        
+        return ans
+
         raise NotImplementedError
