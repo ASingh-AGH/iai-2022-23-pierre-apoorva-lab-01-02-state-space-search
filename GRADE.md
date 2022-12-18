@@ -26,9 +26,9 @@ There still exist some issues that should be addressed before the deadline: 2022
 <details><summary>Blocks world state apply &gt;&gt; NotImplementedError</summary></details>
 <details><summary>Blocks world state apply &gt;&gt; NotImplementedError</summary></details>
 <details><summary>Blocks world actions &gt;&gt; NotImplementedError</summary></details>
-<details><summary>Npuzzle heuristic &gt;&gt; (0, 0)</summary></details>
-<details><summary>Npuzzle heuristic &gt;&gt; (0, 0)</summary></details>
-<details><summary>Npuzzle heuristic &gt;&gt; (0, 0)</summary></details>
+<details><summary>Npuzzle heuristic &gt;&gt; cannot unpack non-iterable int object</summary></details>
+<details><summary>Npuzzle heuristic &gt;&gt; cannot unpack non-iterable int object</summary></details>
+<details><summary>Npuzzle heuristic &gt;&gt; cannot unpack non-iterable int object</summary></details>
 
 -----------
 I remain your faithful servant\
