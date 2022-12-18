@@ -27,11 +27,11 @@ There still exist some issues that should be addressed before the deadline: 2022
 <details><summary>Blocks world state apply &gt;&gt; NotImplementedError</summary></details>
 <details><summary>Blocks world actions &gt;&gt; NotImplementedError</summary></details>
 <details><summary>Npuzzle heuristic &gt;&gt; NotImplementedError</summary></details>
-<details><summary>Npuzzle heuristic &gt;&gt; &#x27;method&#x27; object is not iterable</summary></details>
+<details><summary>Npuzzle heuristic &gt;&gt; &#x27;dict&#x27; object is not callable</summary></details>
 <details><summary>Npuzzle heuristic &gt;&gt; NotImplementedError</summary></details>
-<details><summary>Npuzzle heuristic &gt;&gt; &#x27;method&#x27; object is not iterable</summary></details>
+<details><summary>Npuzzle heuristic &gt;&gt; &#x27;dict&#x27; object is not callable</summary></details>
 <details><summary>Npuzzle heuristic &gt;&gt; NotImplementedError</summary></details>
-<details><summary>Npuzzle heuristic &gt;&gt; &#x27;method&#x27; object is not iterable</summary></details>
+<details><summary>Npuzzle heuristic &gt;&gt; &#x27;dict&#x27; object is not callable</summary></details>
 
 -----------
 I remain your faithful servant\
