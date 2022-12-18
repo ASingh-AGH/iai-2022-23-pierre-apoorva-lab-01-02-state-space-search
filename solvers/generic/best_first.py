@@ -44,7 +44,7 @@ class BestFirstSearch:
             i = 0
             children = self.tree.expand(self.problem, node) 
             for child in children:
-                if child.state in self.visited or self.visited[child].cost < child.cost:
+                if child.state in self.visited or self.visited[child] < child.state.cost:
                     continue
                 self.visited.update({child.state: child.cost})
                 self.frontier.push(child)
