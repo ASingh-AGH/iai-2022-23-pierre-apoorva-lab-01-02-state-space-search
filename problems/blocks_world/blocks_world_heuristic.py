@@ -33,6 +33,23 @@ class BlocksWorldNaiveHeuristic(Heuristic):
         # TODO:
         # return a dict of form:
         # { <block name> : <list of the blocks below it in the goal state> }
+
+Dict[str, List[str]]:
+        fundaments = {
+            "1": [],
+            "2": ["1"],
+            "3": ["1", "2"],
+            "4": [],
+            "5": [],
+            "6": [],
+            "7": ["6"],
+            "8": []
+        }
+        return fundaments
+
+
+
+
         raise NotImplementedError
 
     def __call__(self, state: BlocksWorldState) -> int:
@@ -40,4 +57,14 @@ class BlocksWorldNaiveHeuristic(Heuristic):
         # - add `1` to the heuristic value per each block placed in an incorrect column
         # - for other blocks, add `2` if their fundament is incorrect 
         # tip. use self.expected_columns and self.expected_fundaments
-        raise NotImplementedError
+
+        heuristic = 0
+        for block in state.columns[0]:
+            if self.expected_columns[block] != 0:
+                heuristic += 1
+        for column in state.columns[1:]:
+            for block in column:
+                fundament = state.fundament[block]
+                if fundament is not None and fundament not in self.expected_fundaments[block]:
+                    heuristic += 2
+        return heuristic
