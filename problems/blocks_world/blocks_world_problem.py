@@ -17,6 +17,7 @@ class BlocksWorldProblem(ReversibleProblem[BlocksWorldState, BlocksWorldAction])
         # - return all legal actions in the given state
         # tip 1. you can only move blocks from not empty columns
         # tip 2. you can't move move column to the same column it already stands at
+        
         raise NotImplementedError
 
     def take_action(self, state: BlocksWorldState, action: BlocksWorldAction) -> BlocksWorldState:
