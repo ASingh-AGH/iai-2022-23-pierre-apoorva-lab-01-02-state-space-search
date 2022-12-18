@@ -38,6 +38,8 @@ class BestFirstSearch:
         self.frontier.push(self.root)
         while self.frontier:
             node = self.frontier.pop()
+            if self.problem.is_goal(node.state):
+                return node
             
             children = self.tree.expand(self.problem, node) 
             for child in children:
