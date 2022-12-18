@@ -12,7 +12,16 @@ class BlocksWorldAction:
         # - create a new state by applying the action
         #   (move block from 'self.column_from' to 'self.column_to')
         # tip. remember to not modify the current state!
-        self.column_to, self.column_from = self.column_from, None
+
+#------------------
+        new_state = deepcopy(state)
+        block = new_state.columns[self.column_from].pop()
+        new_state.columns[self.column_to].append(block)
+        return new_state
+#------------
+
+
+        #self.column_to, self.column_from = self.column_from, None
         raise NotImplementedError
     
     def __str__(self) -> str:

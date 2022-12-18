@@ -34,6 +34,8 @@ class BlocksWorldNaiveHeuristic(Heuristic):
         # return a dict of form:
         # { <block name> : <list of the blocks below it in the goal state> }
 
+
+#------------------{
 Dict[str, List[str]]:
         fundaments = {
             "1": [],
@@ -46,7 +48,7 @@ Dict[str, List[str]]:
             "8": []
         }
         return fundaments
-
+#--------------------------}
 
 
 
@@ -58,6 +60,9 @@ Dict[str, List[str]]:
         # - for other blocks, add `2` if their fundament is incorrect 
         # tip. use self.expected_columns and self.expected_fundaments
 
+
+#------------------{
+
         heuristic = 0
         for block in state.columns[0]:
             if self.expected_columns[block] != 0:
@@ -68,3 +73,4 @@ Dict[str, List[str]]:
                 if fundament is not None and fundament not in self.expected_fundaments[block]:
                     heuristic += 2
         return heuristic
+#------------------------------}
