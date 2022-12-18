@@ -20,7 +20,6 @@ class UninformedSearch:
         self.tree = Tree(self.root)
 
     def solve(self):
-        # TODO:
         # - if the root node is a goal, just return it
         #   tip. use 'is_goal' method from Problem
         # - push root node to the frontier
@@ -40,7 +39,7 @@ class UninformedSearch:
             if self.problem.is_goal(node.state):
                 return node
             
-            children = self.tree.expand(self.problem, node) #this line is problem
+            children = self.tree.expand(self.problem, node) 
             for child in children:
                 if child.state in self.visited:
                     continue
