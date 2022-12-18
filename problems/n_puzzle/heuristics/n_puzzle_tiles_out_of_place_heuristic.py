@@ -15,8 +15,10 @@ class NPuzzleTilesOutOfPlaceHeuristic(NPuzzleAbstractHeuristic):
 
         count=0
 
-        for i in self.positions:
-            if self.positions[i] != self.goal_coords[i]:
+        curr = self.positions(state)
+        goal = self.goal_coords(state)
+        for i in curr:
+            if curr[i] != goal[i]:
                 count += 1
         return count
 
