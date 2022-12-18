@@ -17,22 +17,48 @@ class BlocksWorldProblem(ReversibleProblem[BlocksWorldState, BlocksWorldAction])
         # - return all legal actions in the given state
         # tip 1. you can only move blocks from not empty columns
         # tip 2. you can't move move column to the same column it already stands at
+
+#---------------------------------{
+
+ actions = []
+        for i, col in enumerate(state.columns):
+            # Don't consider empty columns
+            if not col:
+                continue
+            # Don't consider moving column to itself
+            for j in range(len(state.columns)):
+                if i == j:
+                    continue
+                actions.append(BlocksWorldAction(i, j))
+        return actions
+
+#-----------------------------}
+
         
         raise NotImplementedError
 
     def take_action(self, state: BlocksWorldState, action: BlocksWorldAction) -> BlocksWorldState:
+
+ #------ Apply the given action to the given state and return the resulting state
         return action.apply(state)
 
     def action_cost(self, s: BlocksWorldState, a: BlocksWorldAction) -> int:
+# ------Return the cost of taking the given action from the given state
+# --------In this case, the cost is always 1
         return 1
 
     def is_goal(self, state):
+#---------- Return whether the given state is the goal state
         return state == self.goal
 
     def reversed(self):
+
+#--------- Return a new BlocksWorldProblem with the initial and goal states reversed
         return BlocksWorldProblem(self.goal, self.initial)
 
     def to_image(self, state: BlocksWorldState, size: Tuple[int, int] = (800, 800)) -> Image.Image:
+
+#---------------- Return an image representation of the given state
         state_img = Image.new('RGB', size, color=(248, 255, 229))
         padding_top = 0.1 * state_img.height
         container_shape = state_img.width // len(state.columns), int(
@@ -49,6 +75,7 @@ class BlocksWorldProblem(ReversibleProblem[BlocksWorldState, BlocksWorldAction])
         return state_img.rotate(180)
 
     def _create_block_image(self, container_shape, name) -> Image.Image:
+ #------------Create an image for a single block with the given name
         block_img = Image.new('RGBA', container_shape, (0, 0, 0, 0))
         block_draw = ImageDraw.Draw(block_img)
         (container_width, container_height) = container_shape
