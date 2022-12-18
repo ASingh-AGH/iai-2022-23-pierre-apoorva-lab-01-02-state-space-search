@@ -4,8 +4,8 @@ I regret to inform you that you've received only **15** out of 46 points for thi
 There still exist some issues that should be addressed before the deadline: 2022-12-19 08:00:00 CET (+0100). For further details, please refer to the following list:
 
 <details><summary>Best first search frontier updates when node was visited &gt;&gt; expected to to visit state when receiving node with 50 and having previous visit with 1000 because cost is smaller</summary></details>
-<details><summary>Best first search checks all states neighbours &gt;&gt; &#x27;SumProblemState&#x27; object has no attribute &#x27;cost&#x27;</summary></details>
-<details><summary>Best first search finds the shortest path &gt;&gt; &#x27;GraphProblemState&#x27; object has no attribute &#x27;cost&#x27;</summary></details>
+<details><summary>Best first search checks all states neighbours &gt;&gt; &#x27;&lt;&#x27; not supported between instances of &#x27;int&#x27; and &#x27;dict_values&#x27;</summary></details>
+<details><summary>Best first search finds the shortest path &gt;&gt; &#x27;&lt;&#x27; not supported between instances of &#x27;int&#x27; and &#x27;dict_values&#x27;</summary></details>
 <details><summary>Expand frontier update labeled state if it finds better state &gt;&gt; NotImplementedError</summary></details>
 <details><summary>Expand frontier lower bound updates &gt;&gt; NotImplementedError</summary></details>
 <details><summary>Expand frontier lower bound updates &gt;&gt; NotImplementedError</summary></details>
