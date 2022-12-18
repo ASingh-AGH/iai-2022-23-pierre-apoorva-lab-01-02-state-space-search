@@ -18,8 +18,8 @@ class NPuzzleManhattanHeuristic(NPuzzleAbstractHeuristic):
 
         curr = self.positions(state)
         ans = 0
-        for i in curr:
-            ans += abs(curr[0] - self.goal_coords[0]) + abs (curr[1] - self.goal_coords[1])
+        for i in curr.values():
+            ans += abs(i[0] - self.goal_coords[0]) + abs(i[1] - self.goal_coords[1])
         
         return ans
 
