@@ -1,6 +1,6 @@
 Dear Student,
 
-I regret to inform you that you've received only **20** out of 46 points for this assignment.\
+I'm happy to announce that you've managed to get **23** out of 46 points for this assignment.\
 There still exist some issues that should be addressed before the deadline: 2022-12-19 08:00:00 CET (+0100). For further details, please refer to the following list:
 
 <details><summary>Best first search frontier updates when node was visited &gt;&gt; expected to to visit state when receiving node with 50 and having previous visit with 1000 because cost is smaller</summary></details>
@@ -26,9 +26,6 @@ There still exist some issues that should be addressed before the deadline: 2022
 <details><summary>Blocks world state apply &gt;&gt; NotImplementedError</summary></details>
 <details><summary>Blocks world state apply &gt;&gt; NotImplementedError</summary></details>
 <details><summary>Blocks world actions &gt;&gt; NotImplementedError</summary></details>
-<details><summary>Npuzzle heuristic &gt;&gt; cannot unpack non-iterable int object</summary></details>
-<details><summary>Npuzzle heuristic &gt;&gt; cannot unpack non-iterable int object</summary></details>
-<details><summary>Npuzzle heuristic &gt;&gt; cannot unpack non-iterable int object</summary></details>
 
 -----------
 I remain your faithful servant\
