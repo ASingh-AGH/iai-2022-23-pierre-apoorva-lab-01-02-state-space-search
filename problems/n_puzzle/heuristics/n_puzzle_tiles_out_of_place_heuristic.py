@@ -11,5 +11,13 @@ class NPuzzleTilesOutOfPlaceHeuristic(NPuzzleAbstractHeuristic):
         # tip 1.'state' is the current state, 
         # tip 2. you can use self.positions function to get from it a dictionary:
         #   { tile_number : (x_coordinate, y_coordinate) }
-        # tip 3. self.goal_coords contains such a dictionary for the goal state
+        # tip 3. self.goal_coords contains such a dictionary for the goal state 
+
+        count=0
+
+        for i in self.positions:
+            if self.positions[i] != self.goal_coords[i]:
+                count += 1
+        return count
+
         raise NotImplementedError

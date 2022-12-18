@@ -102,6 +102,15 @@ class SearchProcess():
         #       * label the new node and add it to the frontier
         #       * update the upper bound
         # 5. return the current upper bound 
+
+        for node in self.labeled_states:
+            self.scanned_states.add(node.state)
+            if self.cost_lower_bound < node.cost_lower_bound:
+                self.cost_lower_bound = node.cost_lower_bound
+            
+
+        return None
+
         raise NotImplementedError
 
     def _estimated_cost(self, n: Node) -> float:
