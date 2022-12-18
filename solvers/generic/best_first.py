@@ -43,10 +43,10 @@ class BestFirstSearch:
             
             children = self.tree.expand(self.problem, node) 
             for child in children:
-                if child.state in self.visited:
+                if child.state in self.visited or child.cost < self.visited.values():
                     continue
                 self.visited.update({child.state: child.cost})
-                self.frontier.push(child.state)
+                self.frontier.push(child)
         return None
 
         raise NotImplementedError
