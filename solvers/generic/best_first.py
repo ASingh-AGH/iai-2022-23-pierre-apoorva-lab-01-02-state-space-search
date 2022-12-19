@@ -32,24 +32,27 @@ class BestFirstSearch:
         #         * update cost in visited
         #         * push child onto frontier
         # - return None if nothing happens
-    """
-        if self.problem.is_goal(self.root.state):
-            return self.root
-        self.frontier.push(self.root)
-        while self.frontier:
-            node = self.frontier.pop()
-            if self.problem.is_goal(node.state):
-                return node
-            
-            children = self.tree.expand(self.problem, node) 
-            for child in children:
-                if child.state in self.visited:
-                    continue
-                self.visited.update({child.state: child.cost})
-                self.frontier.push(child)
-        return None
 
-    """
+
+
+        # ORIGINAL CODE MODIFIED HERE WAS NOT ACCEPTING SPEECH QUOTES FOR SOME REASON"""
+        # if self.problem.is_goal(self.root.state):
+            # return self.root
+        # self.frontier.push(self.root)
+        # while self.frontier:
+            # node = self.frontier.pop()
+            # if self.problem.is_goal(node.state):
+                # return node
+            
+            # children = self.tree.expand(self.problem, node) 
+            # for child in children:
+                # if child.state in self.visited:
+                    # continue
+                # self.visited.update({child.state: child.cost})
+                # self.frontier.push(child)
+        # return None
+
+        # """
 #-----------------------------{
         if self.problem.is_goal(self.root.state):
                 return self.root
