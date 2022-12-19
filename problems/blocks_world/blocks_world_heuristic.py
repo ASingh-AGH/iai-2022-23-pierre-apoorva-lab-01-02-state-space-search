@@ -36,21 +36,18 @@ class BlocksWorldNaiveHeuristic(Heuristic):
 
 
 #------------------{
-Dict[str, List[str]]:
-        fundaments = {
-            "1": [],
-            "2": ["1"],
-            "3": ["1", "2"],
-            "4": [],
-            "5": [],
-            "6": [],
-            "7": ["6"],
-            "8": []
-        }
+        Dict[str, List[str]]:
+            fundaments = {
+                "1": [],
+                "2": ["1"],
+                "3": ["1", "2"],
+                "4": [],
+                "5": [],
+                "6": [],
+                "7": ["6"],
+                "8": []
+            }
         return fundaments
-#--------------------------}
-
-
 
         raise NotImplementedError
 
