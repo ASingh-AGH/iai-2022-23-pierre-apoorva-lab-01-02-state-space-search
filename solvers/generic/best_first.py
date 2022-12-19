@@ -32,7 +32,7 @@ class BestFirstSearch:
         #         * update cost in visited
         #         * push child onto frontier
         # - return None if nothing happens
-"""
+    """
         if self.problem.is_goal(self.root.state):
             return self.root
         self.frontier.push(self.root)
@@ -49,7 +49,7 @@ class BestFirstSearch:
                 self.frontier.push(child)
         return None
 
-"""
+    """
 #-----------------------------{
         if self.problem.is_goal(self.root.state):
                 return self.root
