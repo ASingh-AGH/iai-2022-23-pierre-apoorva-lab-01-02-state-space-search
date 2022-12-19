@@ -46,7 +46,7 @@ class BestFirstSearch:
                         continue
                     self.visited.update({child.state: child.cost})
                     self.frontier.push(child)
-            return None
+        return None
 
 
 #-----------------------------{ MY ATTEMPT DID NOT WORK?
@@ -55,5 +55,7 @@ class BestFirstSearch:
                 # if child.state not in self.visited or child.cost < self.visited[child.state]:
                     # self.visited[child.state] = child.cost
                     # self.frontier.push(child)
+        
+        # return None
 #---------------------------------------}
         raise NotImplementedError
