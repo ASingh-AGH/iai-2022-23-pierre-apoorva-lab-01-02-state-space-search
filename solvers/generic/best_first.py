@@ -55,19 +55,21 @@ class BestFirstSearch:
         # """
 #-----------------------------{
         if self.problem.is_goal(self.root.state):
-                return self.root
-            
-            self.frontier.put(self.root)
+            return self.root
+        
+        self.frontier.put(self.root)
 
-            while not self.frontier.empty():
-                curr_node = self.frontier.get()
-                if self.problem.is_goal(curr_node.state):
-                    return curr_node
-                
-                children = self.tree.expand(curr_node)
-                for child in children:
-                    if child.state not in self.visited or child.cost < self.visited[child.state]:
-                        self.visited[child.state] = child.cost
-                        self.frontier.put(child)
+        while not self.frontier.empty():
+            curr_node = self.frontier.get()
+            if self.problem.is_goal(curr_node.state):
+                return curr_node
+            
+            children = self.tree.expand(curr_node)
+            for child in children:
+                if child.state not in self.visited or child.cost < self.visited[child.state]:
+                    self.visited[child.state] = child.cost
+                    self.frontier.put(child)
+        
+        return None
 #---------------------------------------}
         raise NotImplementedError
