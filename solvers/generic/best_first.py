@@ -33,29 +33,19 @@ class BestFirstSearch:
         #         * push child onto frontier
         # - return None if nothing happens
         if self.problem.is_goal(self.root.state):
-                return self.root
+            return self.root
         self.frontier.push(self.root)
         while self.frontier:
-                node = self.frontier.pop()
-                if self.problem.is_goal(node.state):
-                    return node
-                
-                children = self.tree.expand(self.problem, node) 
-                for child in children:
-                    if child.state in self.visited:
-                        continue
-                    self.visited.update({child.state: child.cost})
-                    self.frontier.push(child)
+            node = self.frontier.pop()
+            if self.problem.is_goal(node.state):
+                return node
+            
+            children = self.tree.expand(self.problem, node) 
+            for child in children:
+                if child.state in self.visited:
+                    continue
+                self.visited.update({child.state: child.cost})
+                self.frontier.push(child)
         return None
 
-
-#-----------------------------{ MY ATTEMPT DID NOT WORK?
-            # children = self.tree.expand(node)
-            # for child in children:
-                # if child.state not in self.visited or child.cost < self.visited[child.state]:
-                    # self.visited[child.state] = child.cost
-                    # self.frontier.push(child)
-        
-        # return None
-#---------------------------------------}
         raise NotImplementedError

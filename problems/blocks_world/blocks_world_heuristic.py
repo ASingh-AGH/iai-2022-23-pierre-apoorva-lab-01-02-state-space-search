@@ -73,4 +73,6 @@ Dict[str, List[str]]:
                 if fundament is not None and fundament not in self.expected_fundaments[block]:
                     heuristic += 2
         return heuristic
+
+        raise NotImplementedError
 #------------------------------}

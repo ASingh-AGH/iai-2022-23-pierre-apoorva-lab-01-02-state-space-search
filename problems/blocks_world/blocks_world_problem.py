@@ -31,11 +31,8 @@ class BlocksWorldProblem(ReversibleProblem[BlocksWorldState, BlocksWorldAction])
                     continue
                 actions.append(BlocksWorldAction(i, j))
         return actions
-
-#-----------------------------}
-
-        
-        raise NotImplementedError
+     
+    raise NotImplementedError
 
     def take_action(self, state: BlocksWorldState, action: BlocksWorldAction) -> BlocksWorldState:
 

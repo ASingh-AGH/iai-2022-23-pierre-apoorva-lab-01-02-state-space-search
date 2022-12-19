@@ -145,8 +145,6 @@ class SearchProcess():
                     upper_bound = self._update_upper_bound(child, upper_bound, opposite)
         return upper_bound
 
-    
-#----------------------}
         raise NotImplementedError
 
     def _estimated_cost(self, n: Node) -> float:
@@ -180,11 +178,6 @@ class SearchProcess():
         # if there is no such node, return None
         return None
 
-
-#---------------------}
-
-
-
         raise NotImplementedError
 
     def _update_upper_bound(self, node: Node, upper_bound_cost: float, other_process: 'SearchProcess') -> float:
@@ -208,10 +201,6 @@ class SearchProcess():
             return new_upper_bound
         # otherwise return the old one
         return upper_bound_cost
-
-
-#------------------------}
-
 
         raise NotImplementedError
 
