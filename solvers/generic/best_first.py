@@ -60,7 +60,7 @@ class BestFirstSearch:
         self.frontier.push(self.root)
 
         while not self.frontier.empty():
-            curr_node = self.frontier.get()
+            curr_node = self.frontier.pop()
             if self.problem.is_goal(curr_node.state):
                 return curr_node
             
