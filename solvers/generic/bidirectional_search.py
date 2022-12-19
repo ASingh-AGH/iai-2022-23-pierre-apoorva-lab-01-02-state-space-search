@@ -102,7 +102,7 @@ class SearchProcess():
         #       * label the new node and add it to the frontier
         #       * update the upper bound
         # 5. return the current upper bound 
-
+"""
         for node in self.labeled_states:
             self.scanned_states.add(node.state)
             if self.cost_lower_bound < node.cost_lower_bound:
@@ -110,7 +110,43 @@ class SearchProcess():
             
 
         return None
+"""
+#---------------------------------{
+      # find a new node to expand
+        candidate = self._select_candidate(upper_bound, opposite)
+        if candidate is None:
+            return None
 
+        # Mark the node as scanned (add it to the self.scanned_states)
+        self.scanned_states.add(candidate.state)
+
+        # Update the lower bound if the estimated value for the state is lower than the current one
+        self.cost_lower_bound = min(self.cost_lower_bound, self._estimated_cost(candidate))
+
+        # if the opposite process hasn't scanned the node's state yet:
+        if not opposite.has_scanned_state(candidate.state):
+            # iterate over all the children of the node, that haven't been rejected/scanned
+            for child in candidate.expand(problem=self.problem):
+                if child.state in self.rejected_states or self.has_scanned_state(child.state):
+                    continue
+                # if their states have been labeled already, check if they have a better cost (like in the normal A*)
+                if self.has_labeled_state(child.state):
+                    existing_node = self.labeled_node(child.state)
+                    if existing_node.cost > child.cost:
+                        self.frontier.remove(existing_node)
+                        self.labeled_states[child.state] = child
+                        self.frontier.append(child)
+                # if those conditions hold:
+                #   * label the new node and add it to the frontier
+                #   * update the upper bound
+                else:
+                    self.labeled_states[child.state] = child
+                    self.frontier.append(child)
+                    upper_bound = self._update_upper_bound(child, upper_bound, opposite)
+        return upper_bound
+
+    
+#----------------------}
         raise NotImplementedError
 
     def _estimated_cost(self, n: Node) -> float:
@@ -127,6 +163,28 @@ class SearchProcess():
         # - if there is no such node, return None   
         # - all the nodes that failed those tests should end up in the self.rejected_states (their states, to be exact)
         # tip. bidirectional estimate = labeled cost + lower bound of the opposite process - opposite heuristic 
+
+
+#---------------------------{
+
+        # return the first node from the frontier that:
+        #   * has estimated cost lower or equal (required for 'inf') than the upper bound
+        #   * has bidirectional estimate lower or equal (required for 'inf') than the upper bound
+        for node in self.frontier:
+            if self._estimated_cost(node) <= upper_bound:
+                bidirectional_estimate = self.labeled_state_cost(node.state) + opposite.cost_lower_bound - opposite.heuristic(node.state)
+                if bidirectional_estimate <= upper_bound:
+                    return node
+            # all the nodes that failed those tests should end up in the self.rejected_states (their states, to be exact)
+            self.rejected_states.add(node.state)
+        # if there is no such node, return None
+        return None
+
+
+#---------------------}
+
+
+
         raise NotImplementedError
 
     def _update_upper_bound(self, node: Node, upper_bound_cost: float, other_process: 'SearchProcess') -> float:
@@ -137,6 +195,24 @@ class SearchProcess():
         #    - return the new upper bound
         # 3. otherwise return the old one
         # tip. upper bound of the path given a node is the sum of of the node's labeled cost in both processes
+
+#---------------------------------{
+    
+        # calculate new upper bound based on the node
+        new_upper_bound = self.labeled_state_cost(node.state) + other_process.labeled_state_cost(node.state)
+        # if the new upper bound is better than the old one:
+        #    - update the self.meeting_point to the node
+        #    - return the new upper bound
+        if new_upper_bound < upper_bound_cost:
+            self.meeting_point = node
+            return new_upper_bound
+        # otherwise return the old one
+        return upper_bound_cost
+
+
+#------------------------}
+
+
         raise NotImplementedError
 
 
