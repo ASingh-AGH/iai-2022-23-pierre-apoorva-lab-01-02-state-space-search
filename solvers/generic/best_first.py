@@ -57,7 +57,7 @@ class BestFirstSearch:
         if self.problem.is_goal(self.root.state):
             return self.root
         
-        self.frontier.put(self.root)
+        self.frontier.push(self.root)
 
         while not self.frontier.empty():
             curr_node = self.frontier.get()
@@ -68,7 +68,7 @@ class BestFirstSearch:
             for child in children:
                 if child.state not in self.visited or child.cost < self.visited[child.state]:
                     self.visited[child.state] = child.cost
-                    self.frontier.put(child)
+                    self.frontier.push(child)
         
         return None
 #---------------------------------------}
