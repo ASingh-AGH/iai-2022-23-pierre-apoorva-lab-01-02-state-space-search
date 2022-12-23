@@ -103,32 +103,24 @@ class SearchProcess():
         #       * update the upper bound
         # 5. return the current upper bound 
     
-
-        #pierre code leave in case
-        #for node in self.labeled_states:
-        #    self.scanned_states.add(node.state)
-        #    if self.cost_lower_bound < node.cost_lower_bound:
-        #        self.cost_lower_bound = node.cost_lower_bound
-        #return None
 #---------------------------------{
-        candidate = self.select_candidate(upper_bound, opposite)
+        candidate = self.select_candidate()
         if candidate is None:
             return None
-
-        if self.problem.is_goal(candidate.state):
+        if candidate.cost > upper_bound or candidate.state in self.rejected_states:
+            self.rejected_states.add(candidate.state)
+            return upper_bound
+        self.cost_lower_bound = max(self.cost_lower_bound, candidate.cost)
+        if opposite.has_labeled_state(candidate.state):
             self.meeting_point = candidate
-            return candidate.cost
+            return candidate.cost + opposite.labeled_state_cost(candidate.state)
         self.scanned_states.add(candidate.state)
         for child in self.tree.expand(self.problem, candidate):
-            if child.cost >= upper_bound:
-                self.rejected_states.add(child.state)
-                continue
-            if child.state in self.rejected_states:
-                continue
-            if self.has_scanned_state(child.state):
-                continue
-            self.update_frontier(child, upper_bound, opposite)
-        return self.cost_lower_bound
+            if not self.has_scanned_state(child.state):
+                if not self.has_labeled_state(child.state) or child.cost < self.labeled_states[child.state].cost:
+                    self.labeled_states[child.state] = child
+                    self.frontier.push(child)
+        return upper_bound
 
         raise NotImplementedError
 
@@ -175,7 +167,6 @@ class SearchProcess():
         # tip. upper bound of the path given a node is the sum of of the node's labeled cost in both processes
 
 #---------------------------------{
-
         new_upper_bound = node.cost + other_process.labeled_state_cost(node.state)
         if new_upper_bound < upper_bound_cost:
             self.meeting_point = node
