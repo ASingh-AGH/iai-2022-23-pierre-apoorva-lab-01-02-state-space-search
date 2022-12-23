@@ -102,15 +102,14 @@ class SearchProcess():
         #       * label the new node and add it to the frontier
         #       * update the upper bound
         # 5. return the current upper bound 
-"""
-        for node in self.labeled_states:
-            self.scanned_states.add(node.state)
-            if self.cost_lower_bound < node.cost_lower_bound:
-                self.cost_lower_bound = node.cost_lower_bound
-            
+    
 
-        return None
-"""
+        #pierre code leave in case
+        #for node in self.labeled_states:
+        #    self.scanned_states.add(node.state)
+        #    if self.cost_lower_bound < node.cost_lower_bound:
+        #        self.cost_lower_bound = node.cost_lower_bound
+        #return None
 #---------------------------------{
       # find a new node to expand
         candidate = self._select_candidate(upper_bound, opposite)
@@ -147,6 +146,9 @@ class SearchProcess():
 
         raise NotImplementedError
 
+#---------------------------------}
+
+
     def _estimated_cost(self, n: Node) -> float:
         """ returns estimated cost of the given node"""
         return n.cost + self.heuristic(n.state)
@@ -173,12 +175,13 @@ class SearchProcess():
                 bidirectional_estimate = self.labeled_state_cost(node.state) + opposite.cost_lower_bound - opposite.heuristic(node.state)
                 if bidirectional_estimate <= upper_bound:
                     return node
-            # all the nodes that failed those tests should end up in the self.rejected_states (their states, to be exact)
+        #all the nodes that failed those tests should end up in the self.rejected_states (their states, to be exact)
             self.rejected_states.add(node.state)
-        # if there is no such node, return None
         return None
 
         raise NotImplementedError
+
+#---------------------------}
 
     def _update_upper_bound(self, node: Node, upper_bound_cost: float, other_process: 'SearchProcess') -> float:
         # TODO:
@@ -191,19 +194,15 @@ class SearchProcess():
 
 #---------------------------------{
     
-        # calculate new upper bound based on the node
         new_upper_bound = self.labeled_state_cost(node.state) + other_process.labeled_state_cost(node.state)
-        # if the new upper bound is better than the old one:
-        #    - update the self.meeting_point to the node
-        #    - return the new upper bound
         if new_upper_bound < upper_bound_cost:
             self.meeting_point = node
             return new_upper_bound
-        # otherwise return the old one
         return upper_bound_cost
 
         raise NotImplementedError
 
+#---------------------------------}
 
 class BidirectionalSearchTreeProxy(Tree, NodeEventSubscriber):
     """
