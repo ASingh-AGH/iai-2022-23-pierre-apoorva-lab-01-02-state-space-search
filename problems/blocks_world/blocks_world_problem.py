@@ -26,7 +26,7 @@ class BlocksWorldProblem(ReversibleProblem[BlocksWorldState, BlocksWorldAction])
                     actions.append(BlocksWorldAction(i, j))
 
 
-        return  action 
+        return actions 
 
 
     def take_action(self, state: BlocksWorldState, action: BlocksWorldAction) -> BlocksWorldState:
