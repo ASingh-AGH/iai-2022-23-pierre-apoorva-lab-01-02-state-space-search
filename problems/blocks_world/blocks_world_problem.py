@@ -19,6 +19,23 @@ class BlocksWorldProblem(ReversibleProblem[BlocksWorldState, BlocksWorldAction])
         # tip 2. you can't move move column to the same column it already stands at
 
 
+        for i, col in enumerate(state.columns):
+        if col:  # Only consider non-empty columns
+            for j, target_col in enumerate(state.columns):
+                if i != j:  # Can't move column to the same column
+                    actions.append(BlocksWorldAction(i, j))
+
+
+        return  action 
+
+
+    def take_action(self, state: BlocksWorldState, action: BlocksWorldAction) -> BlocksWorldState:
+        return action.apply(state)
+
+    def action_cost(self, s: BlocksWorldState, a: BlocksWorldAction) -> int:
+
+
+
     def take_action(self, state: BlocksWorldState, action: BlocksWorldAction) -> BlocksWorldState:
         return action.apply(state)
 
